@@ -30,19 +30,19 @@ namespace ProAtividade.API.Controllers
         }
 
         [HttpPost]
-        public IEnumerable<Atividade> Post(Atividade atividade) 
+        public Atividade Post(Atividade atividade) 
         {
             _context.Atividades.Add(atividade);
             if (_context.SaveChanges() > 0)
-                return _context.Atividades;
+                return atividade;
             else
-                throw new Exception("Você ta sendo burro");
+                throw new Exception("Você não conseguiu adicionar uma atividade");
         }
 
         [HttpPut("{id}")]
         public Atividade Put(int id, Atividade atividade) 
         {
-            if (atividade.Id != id) throw new Exception("Você ta fazendo errado");
+            if (atividade.Id != id) throw new Exception("Você está tentando editar a atividade errada");
             _context.Update(atividade);
             if (_context.SaveChanges() > 0)
                 return _context.Atividades.FirstOrDefault(ativ => ativ.Id == id);
