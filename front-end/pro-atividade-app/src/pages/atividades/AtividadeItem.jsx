@@ -1,30 +1,29 @@
 import React from 'react'
 
-function prioridadeLabel(param) {
-  switch(param) {
-    case "Baixa":
-    case "Normal":
-    case "Alta":
-      return param;
-    default:
-      return "Não definido";
+export default function AtividadeItem(props) {
+  function prioridadeLabel(param) {
+    switch(param) {
+      case "Baixa":
+      case "Normal":
+      case "Alta":
+        return param;
+      default:
+        return "Não definido";
+    }
   }
-};
-
-function prioridadeStyle(param, icone) {
-  switch(param) {
-    case "Baixa":
-      return icone ? "smile" : "success";
-    case "Normal":
-      return icone ? "meh" : "dark";
-    case "Alta":
-      return icone ? "frown" : "warning";
-    default:
-      return "Não definido";
+  
+  function prioridadeStyle(param, icone) {
+    switch(param) {
+      case "Baixa":
+        return icone ? "smile" : "success";
+      case "Normal":
+        return icone ? "meh" : "dark";
+      case "Alta":
+        return icone ? "frown" : "warning";
+      default:
+        return "Não definido";
+    }
   }
-}
-
-export default function Atividade(props) {
   return (
     <div className={"card mb-2 shadow-sm border-" + prioridadeStyle(props.ativ.prioridade)}>
             <div className="card-body">
@@ -43,11 +42,11 @@ export default function Atividade(props) {
               </div>
               <p className="card-text"> {props.ativ.descricao}</p>
               <div className="d-flex justify-content-end pt-2 border-top">
-                <button className="btn btn-sm btn-outline-primary me-2" onClick={() => props.pegarAtividade(props.ativ.id)}>
+                <button className="btn btn-sm btn-outline-dark me-2" onClick={() => props.pegarAtividade(props.ativ.id)}>
                   <i className="fas fa-pen me-2"></i>
                   Editar
                 </button>
-                <button className="btn btn-sm btn-outline-danger" onClick={() => props.handleConfirmModal(props.ativ.id)}>
+                <button className="btn btn-sm btn-light" onClick={() => props.handleConfirmModal(props.ativ.id)}>
                   <i className="fas fa-trash me-2"></i>
                   Deletar
                 </button>
