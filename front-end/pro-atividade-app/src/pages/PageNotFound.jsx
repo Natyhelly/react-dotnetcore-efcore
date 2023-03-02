@@ -1,7 +1,7 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function PageNotFound() {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     return (
         <>
@@ -9,7 +9,7 @@ export default function PageNotFound() {
                 <h2>Ops... Página não encontrada.</h2>
                 <br />
                 <h5>404 Not Found</h5>
-                <button className='btn btn-dark mt-5' onClick={() => history.goBack()}>
+                <button className='btn btn-dark mt-5' onClick={() => navigate.goBack()}>
                     <i className='fas fa-reply me-2'></i>
                     Voltar
                 </button>
