@@ -72,7 +72,7 @@ export default function AtividadeForm(props) {
         <hr />
       </div>
      
-      <div className='col-12 mt-0'>
+      <div className='col-12 mt-0 text-end'>
         {atividade.id === 0 ? (
           <button className='btn btn-outline-dark' type='submit'>
             <i className='fas fa-plus me-2'></i>

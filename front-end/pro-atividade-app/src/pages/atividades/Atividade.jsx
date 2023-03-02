@@ -79,8 +79,8 @@ export default function Atividade() {
 
   return (
     <>
-      <TitlePage title={'Atividade ' + (atividade.id !== 0 ? atividade.id : '')}>
-        <Button variant="btn btn-info" onClick={novaAtividade}>
+      <TitlePage title='Atividades'>
+        <Button variant="btn btn-outline-dark" onClick={novaAtividade}>
           <i className="fas fa-plus me-2"></i>
           Nova Atividade
         </Button>

@@ -15,11 +15,11 @@ export default function AtividadeItem(props) {
   function prioridadeStyle(param, icone) {
     switch(param) {
       case "Baixa":
-        return icone ? "smile" : "success";
+        return icone ? "grin-beam" : "success";
       case "Normal":
-        return icone ? "meh" : "dark";
+        return icone ? "grin-alt" : "info";
       case "Alta":
-        return icone ? "frown" : "warning";
+        return icone ? "grimace" : "danger";
       default:
         return "Não definido";
     }
