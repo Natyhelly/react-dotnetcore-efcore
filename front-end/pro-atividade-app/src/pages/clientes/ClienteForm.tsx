@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import TitlePage from './../../components/TitlePage';
 
-export default function ClienteForm() {
+const ClienteForm: React.FC = () => {
   const navigate = useNavigate();
   let { id } = useParams();
 
@@ -15,7 +15,7 @@ export default function ClienteForm() {
   return (
     <>
       <TitlePage title={'Cliente Detalhes ' + (id !== undefined ? id : '')}>
-        <Button variant='dark' onClick={() => navigate('/clientes/lista')}>
+        <Button variant='dark' onClick={() => navigate('/cliente/lista')}>
           <i className='fas fa-reply me-2'></i>
           Voltar
         </Button>
@@ -24,3 +24,5 @@ export default function ClienteForm() {
     </>
   )
 }
+
+export default ClienteForm;
